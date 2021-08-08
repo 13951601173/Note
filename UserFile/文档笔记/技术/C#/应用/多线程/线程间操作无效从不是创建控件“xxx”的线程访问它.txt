@@ -1,0 +1,3 @@
+1.线程间操作无效: 从不是创建控件“xxx”的线程访问它
+CheckForIllegalCrossThreadCalls = false
+2.另外一种比较常见的解决办法：if(Control.IsInvokeRequired){Control.Invoke(……);}

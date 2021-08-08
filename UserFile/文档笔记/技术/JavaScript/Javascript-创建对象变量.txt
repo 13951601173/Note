@@ -1,0 +1,12 @@
+<script type="text/javascript">
+        IsShowMenuDefault = false;
+        var ddActivity=new Object();
+        var Json_HD = <%=Json_HD %>;
+        
+        $(function(){
+            ddActivity.当前培训活动ID="<%= 当前培训活动ID %>";
+            BindSelectControl("cc活动名称",Json_HD);
+            $("#cc活动名称").val(ddActivity.当前培训活动ID);
+            BindMyActivityList(ddActivity.当前培训活动ID,"","","");
+        });
+    </script>

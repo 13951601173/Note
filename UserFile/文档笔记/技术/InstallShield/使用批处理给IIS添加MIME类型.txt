@@ -1,0 +1,19 @@
+
+@echo off
+set /p warn="警告：本脚本会清空全部站点原有MIME类型，输入y按回车继续，直接回车退出："
+if "%warn%" neq "y" exit
+echo wait...
+%systemdrive%
+cd %systemdrive%\inetpub\adminscripts
+adsutil.vbs set w3svc/MimeMap .sis,application/vnd.symbian.install .sisx,x-epoc/x-sisx-app .jar,application/java-archive .jad,text/vnd.sun.j2me.app-descriptor .thm,application/vnd.eri.thm .nth,application/vnd.nok-s40theme .tsk,application/vnd.ppc.thm .utz,application/vnd.uiq.thm .umd,application/umd .amr,audio/amr .mp3,audio/x-mpeg .3gp,video/3gpp
+echo.
+echo.
+echo MIME设置完成，按任意键退出!
+pause>nul
+　　
+
+
+将以上内容保存为bat文件，双击执行即可。若还需其他MIME类型可自行添加。本脚本将设置IIS上全部站点的MIME类型，但设置前会清空全部站点原有MIME类型，一定要注意！
+
+下面验证过，可用的，反而是上面的脚本(w3svc/MimeMap)会有问题：
+若只想设置默认站点 localhost MIME类型，可将上边脚本中"w3svc/MimeMap"修改为"w3svc/1/root/MimeMap"；

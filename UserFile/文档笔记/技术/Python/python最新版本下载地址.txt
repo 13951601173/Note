@@ -1,0 +1,2 @@
+python最新版本下载地址：https://www.python.org/getit/
+https://www.python.org/downloads/windows/

@@ -1,0 +1,17 @@
+昨天还用的好好的VSS今天早上一来就提示：
+
+Cannot find SS.INI file for user ***
+
+度娘了一下，好像都是说的：
+
+1，vss\users\***\  下无文件SS.INI
+若无从别处copy一个
+2，vss\users\***\  
+下有文件SS.INI
+修改vss下users.txt文件
+添加：
+*** = users\***\ss.ini
+
+但是我的就没有users这个目录，更没有SS.INI或者users.txt这个文件，我的是VSS2005的版本，不知道是不是其他版本才有，其他用户登录没问题，就一个用户登录有问题。
+
+最后用用管理员账户进入Visual SourceSafe Administrator中，把出问题的账户删除，然后重新创建该账户，设置密码，OK问题解决，该用户之前签出的文件或程序不受影响可正常签入。

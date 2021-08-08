@@ -1,0 +1,34 @@
+随着HTML5的逐渐流行，很多网站都用上了HTML5规范来编写HTML代码，HTML5的HEAD区的写法跟XTHML有一些差别，下面就用对照的方法写出两者的差别，希望能对同学们编写HTML5代码起到帮助作用。
+
+DOCTYPE的变化
+
+xthml的年代它是这样的：
+
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN" “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+HTML5的年代它变成了这样的：
+
+<!DOCTYPE html>
+HTML标签的变化
+
+xthml的年代它是这样的：
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
+HTML5的年代它变成了这样的：
+
+<html lang="zh-CN">
+META标签编码的变化
+
+xthml的年代它是这样的：
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8″ />
+HTML5的年代它变成了这样的：
+
+<meta charset="UTF-8″ />
+CSS载入标签的变化
+
+xthml的年代它是这样的：
+
+<link rel="stylesheet" href="" type="text/css" />
+HTML5的年代它变成了这样的：
+
+<link rel="stylesheet" href="" />

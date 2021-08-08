@@ -1,0 +1,1 @@
+object[] mmParamater = new object[1] { mm系统标识ID };

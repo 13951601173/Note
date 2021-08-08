@@ -1,0 +1,2 @@
+1.select t.一级学科id,count(t.二级学科id) from 二级学科 t group by t.一级学科id order by t.一级学科id
+2.select xk.一级学科id,xk.一级学科名称,count(t.二级学科id) from 二级学科 t inner join 一级学科 xk on xk.一级学科id=t.一级学科id group by xk.一级学科id,xk.一级学科名称 order by xk.一级学科id

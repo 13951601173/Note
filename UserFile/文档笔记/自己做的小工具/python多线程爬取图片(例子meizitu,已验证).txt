@@ -1,0 +1,93 @@
+import requests
+from bs4 import BeautifulSoup
+import os
+import sys
+from multiprocessing import Pool  #多线程
+
+'''
+#安卓
+reload(sys)
+sys.setdefaultencoding('utf-8')
+'''
+def find_MaxPage():
+        all_url="http://www.mzitu.com"
+        start_html = requests.get(all_url, headers=header)   #header在main中被定义过
+        soup=BeautifulSoup(start_html.text,'html.parser')
+        page=soup.find_all('a',class_='page-numbers')
+        max_page=page[-2].text;
+        return max_page
+
+def funcvar(x): return x + 1
+
+def download_Pic(href,header,title,path):
+        single_html=requests.get(href,headers=header)
+        soup=BeautifulSoup(single_html.text,'html.parser')
+        div_content=soup.find('div',class_='content')
+        div_pagenavi=soup.find('div',class_='pagenavi')
+        all_navipages=div_pagenavi.find_all('span')
+        max_navipage=all_navipages[-2].text
+        single_path=path+title.strip().replace('?','')
+        if (os.path.exists(single_path)):
+                print("[" + title + "]已存在！")
+                return
+        print("开始扒取[" + title + "]，共" + max_navipage + "张......")
+
+        # 创建文件夹
+        os.makedirs(single_path)
+        os.chdir(single_path)
+
+        for i in range(1, int(max_navipage) + 1):
+                t_url = href + '/' + str(i)
+                t_html = requests.get(t_url, headers=header)
+                soup = BeautifulSoup(t_html.text, 'html.parser')
+                main_image = soup.find('div', class_='main-image')
+                img = main_image.find('img', alt=title)
+                pic_html = requests.get(img['src'], headers=header)
+                file_name = img['src'].split(r'/')[-1]
+                f = open(file_name, 'wb')
+                f.write(pic_html.content)
+                f.close()
+        print("[" + title + "]已完成！")
+
+
+if __name__=='__main__':
+        if(os.name=='nt'):
+                print('你正在使用windows平台！')
+        else:
+                print('你正在使用linux平台！')
+
+        #设置headers，网站会根据这个判断你的浏览器及操作系统，很多网站没有此信息将拒绝你访问
+        header = {"Accept": "text/html,application/xhtml+xml,application/xml;",
+                   "Accept-Encoding": "gzip",
+                   "Accept-Language": "zh-CN,zh;q=0.8",
+                   "Referer": "http://www.mzitu.com/",
+                   "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36"
+                   }
+        #保存地址
+        path="D:/mzitu/"
+
+        # 找寻最大页数
+        max_page=find_MaxPage()
+
+        # http请求头
+        same_url = "http://www.mzitu.com/page/"
+        pool=Pool(5)
+        for i in  range(1,int(max_page)+1):
+                page_url = same_url + str(i)
+                page_html = requests.get(page_url, headers=header)
+                soup = BeautifulSoup(page_html.text, 'html.parser')
+                all_postlist = soup.find('div', class_='postlist')
+                all_a = all_postlist.find_all('a', target='_blank')
+                for a in all_a:
+                        title = a.get_text()
+                        if (title != ''):
+                                #print('正在下载[%s]数据......' % title)
+
+                                href=a['href']
+                                pool.apply_async(download_Pic,args=(href,header,title,path))
+        pool.close()
+        pool.join()
+        print('操作完毕！')
+        #start_html = requests.get(same_url, headers=header)
+
+

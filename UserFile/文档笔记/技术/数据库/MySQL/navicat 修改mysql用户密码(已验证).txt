@@ -1,0 +1,3 @@
+用navicat连接到mysql， 然后按F6， 输入use mysql;
+假设你要设置的密码是'mypassword'， 那么输入下面的语句UPDATE user SET Password = PASSWORD('mypassword') WHERE user = 'root';
+输入FLUSH PRIVILEGES;

@@ -1,0 +1,17 @@
+由于oracle中通过自带的表查询每张表的记录数是不准确的，主要是oracle系统表中的数据不是实时的，是定期维护的，如果想得到实时的记录数，可以通过添加新的function来实现：
+create or replace function count_rows(table_name in varchar2,
+                              owner in varchar2 default null)
+return number
+authid current_user
+IS
+   num_rows number;
+   stmt varchar2(2000);
+begin
+   if owner is null then
+      stmt := 'select count(*) from "'||table_name||'"';
+   else
+      stmt := 'select count(*) from "'||owner||'"."'||table_name||'"';
+   end if;
+   execute immediate stmt into num_rows;
+   return num_rows;
+end;

@@ -1,0 +1,5 @@
+1.首先安装JDK7,配置环境变量。
+http://jingyan.baidu.com/article/9f63fb91d87fb0c8400f0e93.html
+2.运行E:\开发\项目\迪信通\企信通DIY09v2.0.5\服务端\bin下的startup.bat，自带tomcat。
+应该是E:\smsserver\bin下的startup.bat(这是本地老DELL的机器)，中间路径不能用中文，否则会出问题。
+

@@ -1,0 +1,9 @@
+function StartTimer()
+{
+    timer=window.setInterval(function(){BindContent(FundWorkID);},1000);
+}
+
+function ClearTimer()
+{
+    window.clearInterval(timer);
+}

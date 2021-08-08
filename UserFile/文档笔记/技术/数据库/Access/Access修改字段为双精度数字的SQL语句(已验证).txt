@@ -1,0 +1,1 @@
+ALTER TABLE 待发邮件 ALTER COLUMN 是否发送 Double

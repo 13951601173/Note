@@ -1,0 +1,5 @@
+@echo off
+net stop mysql
+sc delete mysql
+@echo off Ö´ÐÐÍê³É
+pause

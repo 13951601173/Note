@@ -1,0 +1,8 @@
+ DataTable mmDT_省市 = DbHelperMySQL.GetListByDic("省市", string.Empty, "t.排序号 asc");
+            foreach (DataRow mmDR_省市 in mmDT_省市.Rows)
+            {
+                Item mmItem = new Item(mmDR_省市["代码"].ToString(), mmDR_省市["名称"].ToString());
+                cc省份.Properties.Items.Add(mmItem);
+            }
+string text=(cc省份.SelectedItem as Item).Text;
+string value=(cc省份.SelectedItem as Item).Value;

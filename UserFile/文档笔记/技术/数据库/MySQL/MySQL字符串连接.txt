@@ -1,0 +1,1 @@
+SELECT CONCAT(`单位名称`,`单位ID`) FROM `总公司`;

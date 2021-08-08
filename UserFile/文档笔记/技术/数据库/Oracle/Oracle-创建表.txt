@@ -1,0 +1,11 @@
+create table 
+create table 短信和邮件
+(
+  专家id VARCHAR2(50) not null,
+  移动电话 VARCHAR2(50),
+  电子信箱 VARCHAR2(50),
+  姓名   VARCHAR2(50),
+  专家编号 VARCHAR2(50) default '2014MZJN',
+  是否发送 NUMBER default 0 not null
+)
+如果默认数据是字符串，请在字符串前后加'',否则会报错。

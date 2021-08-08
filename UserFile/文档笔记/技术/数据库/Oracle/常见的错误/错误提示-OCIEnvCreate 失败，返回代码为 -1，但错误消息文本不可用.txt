@@ -1,0 +1,2 @@
+OCIEnvCreate 失败，返回代码为 -1，但错误消息文本不可用。
+权限问题，将oracle目录的安全加上network service和network,赋予所有权限即可。

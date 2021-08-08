@@ -1,0 +1,4 @@
+在Navicat for MySQL，选中连接，F6：
+use mysql;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'kjgb2017' WITH GRANT OPTION
+FLUSH   PRIVILEGES;

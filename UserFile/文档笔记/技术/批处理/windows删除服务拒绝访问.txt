@@ -1,0 +1,32 @@
+windows删除服务拒绝访问
+我用在CMD里用SC DELETE XXX 的命令来删除服务，提示失败，拒绝访问，已经是管理员权限了，请问如何解决？
+sky三维国度 | 浏览 1886 次
+推荐于2016-11-08 05:18:39 最佳答案
+WIN7的安全权限方案,在执行其他一些操作时会让感到莫名奇妙的问题。
+在安装SVN服务时就会出现如下问题：
+C:\Users\gushangzao>sc create SVN-Service binpath= "D:\Program Files\Svn\bin\s
+vnserve.exe --service -r E:\repository\svn" displayname= "SVN-Service" start= au
+to depend= Tcpip
+[SC] OpenSCManager 失败 5:
+
+拒绝访问。
+
+解决方案:
+
+建立一个新的文件svn.bat.
+
+输入：
+
+sc create SVN-Service binpath= "D:\Program Files\Svn\bin\svnserve.exe --service -r E:\repository\svn" displayname= "SVN-Service" start= auto depend= Tcpip
+sc start SVN-Service
+
+保存。
+
+右键单击svn.bat. 选择以“管理员方式运行”即可。
+
+同理，在删除某项服务的时候也就采取同样的方式，以删除SVN-Service为例：
+
+输入：
+        sc delete SVN-Service，采取如上方式即可完成。
+
+总结：主要原因仍是没有权限，在命令时执行这个操作总是提示没有权限，而以管理员方式运行则避免了这个问题。

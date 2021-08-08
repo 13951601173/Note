@@ -1,0 +1,23 @@
+function ShangBao() {
+    var mmUp = $("#ccUp").attr("checked"); //.val(); / / $(":checkbox[id^='chk_Up']").val();
+    if (mmUp) {
+        $(":checkbox[id^='chk_']").each(function () {
+            $("#" + this.id).attr("checked", "checked");
+            ddRWList += "|" + this.value;
+        });
+    }
+    else {
+        $(":checkbox[id^='chk_']").each(function () {
+            $("#" + this.id).removeAttr("checked");
+            var reg = new RegExp(this.value, "g");
+            ddRWList=ddRWList.replace(reg, "");
+        });
+    }
+}
+
+function selectRW(ppRWID) {
+    var reg = new RegExp(this.value, "g");
+    ddRWList = ddRWList.replace(reg, "");
+
+    ddRWList += "|" + ppRWID;
+}

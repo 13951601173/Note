@@ -1,0 +1,35 @@
+Adobe acrobat9Pro提示序列号无效的问题(2012-08-16 08:19:07)转载▼标签： 杂谈 分类： 技术归档  
+    打开软件后会立马弹出对话框提示序列号无效，是因为软件自动在线验证，导致序列号无效，只要关闭该功能或使其无法验证即可。操作如下：
+
+   
+
+1.删除C:\Program Files\Common Files\Adobe\Adobe PCD\cache\cache.db和C:\Documents and Settings\All Users\Application Data\FLEXnet\adobe_00080000_tsf.data(Windows 7/Vista系统下为C:＼ProgramData＼FLEXnet\adobe_00080000_tsf.data)两个记录文件。需要注意的是，第二个文件是隐藏文件，所以要先设置显示隐藏文件。
+
+2.然后更改hosts文件。在C:\windows\system32\drivers\etc\hosts 中加入（也可能为隐藏文件；用记事本打开）
+
+127.0.0.1 activate.adobe.com
+127.0.0.1 practivate.adobe.com
+127.0.0.1 ereg.adobe.com
+127.0.0.1 activate.wip3.adobe.com
+127.0.0.1 wip3.adobe.com
+127.0.0.1 3dns-3.adobe.com
+127.0.0.1 3dns-2.adobe.com
+127.0.0.1 adobe-dns.adobe.com
+127.0.0.1 adobe-dns-2.adobe.com
+127.0.0.1 adobe-dns-3.adobe.com
+127.0.0.1 ereg.wip3.adobe.com
+127.0.0.1 activate-sea.adobe.com
+127.0.0.1 wwis-dubc1-vip60.adobe.com
+127.0.0.1 activate-sjc0.adobe.com
+
+屏蔽联网验证。
+
+
+3.重启Acrobat，按照提示重新激活，用下列任何一个序列号即可
+
+1118-1003-2497-4698-2571-4985
+
+1380-1116-3895-6161-9341-0470
+
+
+1380-1890-8397-1237-1511-0972

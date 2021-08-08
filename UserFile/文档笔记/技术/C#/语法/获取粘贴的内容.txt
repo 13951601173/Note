@@ -1,0 +1,11 @@
+private void ccSheet_KeyDown(object sender, KeyEventArgs e)
+        {
+            string mm1 = e.KeyCode.ToString();
+            if (e.Control && e.KeyCode==Keys.V)
+            {
+                _SheetTextCopy = new SheetTextCopy();
+                _SheetTextCopy.Text = Clipboard.GetText();
+                _SheetTextCopy.TextCount = _SheetTextCopy.Text.Split(new char[] { '\r', '\n' }).Length;
+                _SheetTextCopy.CopyedCount = 0;
+            }
+        }

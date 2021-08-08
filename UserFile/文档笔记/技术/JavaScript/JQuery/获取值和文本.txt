@@ -1,0 +1,2 @@
+var mmZHSZSF = $("#cc账户所在省市").val();
+var mm账户所在省市 = $("#cc账户所在省市").find("option:selected").text();

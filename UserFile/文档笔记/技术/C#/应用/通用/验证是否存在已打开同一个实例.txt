@@ -1,0 +1,11 @@
+///验证是否存在一个实例
+                bool mmCreateNewMutex = false;
+                Mutex mmMutex = new Mutex(false, "投标分析系统", out mmCreateNewMutex);
+                if (!mmCreateNewMutex)
+                {
+                    MessageBox.Show("该程序的一个实例已经在运行！");
+                }
+                else
+                {
+                    Application.Run(new Main());
+                }

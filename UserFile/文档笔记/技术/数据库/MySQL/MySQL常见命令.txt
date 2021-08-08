@@ -1,0 +1,3 @@
+mysql>use test; //切记，一定要有;，否则语句会没反应，进入test数据库。
+mysql>show tables; //显示test下所有表。
+mysql>select * from vv_招标项;

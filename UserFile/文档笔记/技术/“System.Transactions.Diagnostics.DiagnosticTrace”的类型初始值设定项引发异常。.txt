@@ -1,0 +1,2 @@
+“System.Transactions.Diagnostics.DiagnosticTrace”的类型初始值设定项引发异常。
+解决方法：在App.Config设置了项，不符合语法规则，初始化时不认。

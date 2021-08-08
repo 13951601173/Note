@@ -1,0 +1,1 @@
+UPDATE `招标单位` set 单位名称=replace(单位名称,'铁通','铁塔') where `总公司ID`='D';

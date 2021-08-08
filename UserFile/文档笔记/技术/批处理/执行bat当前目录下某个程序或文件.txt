@@ -1,0 +1,5 @@
+@echo off
+echo Ö´ÐÐÍê³É
+cd /d %~dp0
+if exist "A.txt" call A.txt
+pause

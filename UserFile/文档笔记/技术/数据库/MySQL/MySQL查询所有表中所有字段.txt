@@ -1,0 +1,4 @@
+select table_schema,table_name,column_name 
+from information_schema.columns 
+where table_name='商务评分标准' and table_schema='test'
+其中test代表数据库名，商务评分标准代表表名。

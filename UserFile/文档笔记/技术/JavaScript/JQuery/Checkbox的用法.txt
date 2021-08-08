@@ -1,0 +1,44 @@
+checkbox的用法
+    var mmValue = $("#ccSelectAll[checked]").val();
+    var mmSFTG = $.trim($(":radio[name='SFTG'][checked]").val()); //赋值 :$("#rad"+mmPSYJ+"_"+mmSWID+"").attr("checked","checked");  
+    if(mmValue == "1")
+    {
+        $(":checkbox[id^='cb_data_']").attr("checked","checked");
+    }
+    else
+    {
+        $(":checkbox[id^='cb_data_']").attr("checked","");
+    }
+---------------------------------------------------------------------------------------------------------
+    var mmValue = $("#checkAll[checked]").val();
+    if(mmValue=='1')
+    {
+        $(":checkbox[name='CheckUser']").attr("checked","checked");
+    }
+    else
+    {
+        $(":checkbox[name='CheckUser']").removeAttr("checked");
+    }
+
+----------------------------------------------------------------------------------------------------------
+$("div[id^='menu']").each(function()
+    { 
+        
+    })
+   $(":checkbox[id^='cb_data_'][checked]").each(function()
+    { 
+        
+    })
+以上用法在win 7中的IE不支持，
+$("[name='R_IsView']:checked").each(function(){
+if(mmid==this.value)
+{
+    mmIsView="1";
+}
+}); 这个支持的
+2.var mmValue = $("input:checkbox[id='"+ ppClientID +"'][checked='true']").val(); 
+    if(mmValue == undefined)
+    {
+        mmValue = "";
+    }
+    return mmValue;

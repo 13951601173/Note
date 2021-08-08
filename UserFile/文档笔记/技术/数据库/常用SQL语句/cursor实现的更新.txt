@@ -1,0 +1,9 @@
+declare cursor city_cur is
+select customer_id,city_name from tmp_cust_city order by customer_id;
+begin
+	for my_cur in city_cur loop
+		update customers
+		set city_name=my_cur.city_name
+		where customer_id=my_cur.customer_id;
+	end loop;
+end;

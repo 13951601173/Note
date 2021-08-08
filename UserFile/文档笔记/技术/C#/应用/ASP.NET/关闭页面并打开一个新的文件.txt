@@ -1,0 +1,9 @@
+string mm文件名 = App.CheckQueryString(Server.UrlDecode(Request["FileName"].ToString()));
+
+        string mmRootPath = @"../../UserFile/Result/";
+
+        string mmFilePath = mmRootPath + mm文件名;
+        Response.Write("<script>parent.location.href='" + mmFilePath + "';parent.close();</script>");
+        Response.End();
+        //Response.Write("<script>window.open('" + mm + "')</script>");
+        return;

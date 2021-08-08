@@ -1,0 +1,5 @@
+1.最小高度
+<div style="min-height:500px;">
+    <uc1:主页登录 ID="主页登录" runat="server"/>
+</div>
+已验证。

@@ -1,0 +1,4 @@
+sublime text3安装emmet
+Windows和Linux系统安装方法一致
+https://packagecontrol.io/installation可以安装packagecontrol。
+或者参照http://www.cnblogs.com/luoshupeng/archive/2013/09/09/3310777.html

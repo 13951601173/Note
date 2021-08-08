@@ -1,0 +1,14 @@
+mysqldump -hlocalhost -P3307 -uroot -p --default-character-set=utf8 mytoubiaodata > d:\mytoubiaodata.sql
+
+
+C:\xampp\mysql\bin
+mysqldump -hlocalhost -P3306 -uroot -p --default-character-set=utf8 mytoubiaodata > d:\mytoubiaodata.sql
+
+mysqldump -hlocalhost -P3307 -uroot -pztsj --default-character-set=utf8 mytoubiaodata > d:\mytoubiaodata.sql
+
+
+mysql -hlocalhost -P3306 -uroot -p123 mydata  < d:\test\mydata.sql
+
+mysql -hlocalhost -P3307 -uroot -p  mytoubiaodata  < d:\mytoubiaodata.sql
+全路径的正确用法：
+"E:\TouBiaoSystem\TouBiaoSystem\bin\Debug\mysql5.5\bin\mysqldump.exe" -hlocalhost -P3307 -uroot -pztsj --default-character-set=utf8 mytoubiaodata > d:\mytoubiaodata.sql

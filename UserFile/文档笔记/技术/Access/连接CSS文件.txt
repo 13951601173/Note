@@ -1,0 +1,2 @@
+1.外部文件
+<link href="css/index.css" rel="stylesheet" type="text/css" />

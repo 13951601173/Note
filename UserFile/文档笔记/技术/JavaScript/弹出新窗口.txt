@@ -1,0 +1,6 @@
+window.open(mmPageUrl);--------------
+   if(typeof window.opener.BindPlanList != "undefined")
+   {
+        window.opener.BindPlanList(0);
+        window.close();
+   }

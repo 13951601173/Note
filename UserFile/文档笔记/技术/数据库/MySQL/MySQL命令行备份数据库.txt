@@ -1,0 +1,5 @@
+在cmd中：
+cd C:\Program Files\MySQL\MySQL Server 5.6\bin
+然后：
+mysqldump -uroot -p test>E:\Init.sql
+输入密码即可。

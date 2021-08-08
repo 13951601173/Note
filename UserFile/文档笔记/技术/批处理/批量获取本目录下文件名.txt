@@ -1,0 +1,6 @@
+@echo off
+echo 获取文件名
+cd /d %~dp0
+DIR  *.* /b>list.txt
+if exist "list.txt" call list.txt
+pause

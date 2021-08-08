@@ -1,0 +1,2 @@
+System.IO.DirectoryInfo mm = new System.IO.DirectoryInfo("D:\\Ab\\C\\");
+string mmRoot = mm.Root.FullName;

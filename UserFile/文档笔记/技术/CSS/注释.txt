@@ -1,0 +1,7 @@
+/* MainµÄÑùÊ½ */
+.Main{
+	float: right;
+	background-color: red;
+	width:60%;
+	height: 1000px;
+}

@@ -1,0 +1,52 @@
+
+                SELECT d.* from ((SELECT
+	                tf.formId,
+	                tf.formRemark,
+	                tf.formTitle,
+	                tf.isFinished,
+	                tf.templateId,
+	                tf.updateTime,
+                    tf.latitude,
+                    tf.longtitude,
+                    tf.province,
+                    tf.city,
+	                tf.userId,
+	                tm.MODEL_NAME,
+	                tp.PROJECT_ID,
+	                tp.PROJECT_NAME,
+	                tu.userName
+                FROM
+	                t_form tf, 
+                ttsurvay_model tm,
+                t_project tp,
+                t_user tu
+                
+                WHERE tf.is_delete = 0  and tm.MODEL_ID = tf.templateId and tp.PROJECT_ID = tm.BELONG_PROJECT and tf.userId = tu.userId and (tp.PROSTRUCT_ID like '0000.0003.0009_32%' or tp.PROSTRUCT_ID like '0000.0003.0009%' or tp.CREATER_ID='889151'))
+							
+						union ALL
+					(
+							SELECT
+	                tf.formId,
+	                tf.formRemark,
+	                tf.formTitle,
+	                tf.isFinished,
+	                tf.templateId,
+	                tf.updateTime,
+                    tf.latitude,
+                    tf.longtitude,
+                    tf.province,
+                    tf.city,
+	                tf.userId,
+	                tm.MODEL_NAME,
+	                tp.PROJECT_ID,
+	                tp.PROJECT_NAME,
+	                tu.userName
+                FROM
+	                t_form tf, 
+                ttsurvay_model tm,
+                t_project tp,
+                t_user tu
+                
+                WHERE tf.is_delete = 0  and tm.MODEL_ID = tf.templateId and tp.PROJECT_ID = tm.BELONG_PROJECT and tf.userId = tu.userId and tf.userId='889151' 
+					)	) d where d.formTitle like '%南京%' or d.PROJECT_NAME like '%南京%'
+                ORDER BY updateTime DESC

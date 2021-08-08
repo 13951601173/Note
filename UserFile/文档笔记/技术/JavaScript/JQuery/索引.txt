@@ -1,0 +1,8 @@
+1.  var mm当前位置=$("#Row_"+ppID).index("#MainTable tr");
+取得id为"Row_"+ppID的tr在id为"MainTable"元素中所有tr中的位置。
+///当前元素$("#Row_"+ppID)上移一位
+$("#Row_"+ppID).insertBefore($("#MainTable tr").get(mm当前位置-1));
+///当前元素$("#Row_"+ppID)下移一位
+$("#Row_"+ppID).insertAfter($("#MainTable tr").get(mm当前位置+1));
+2.检索字符
+indexOf

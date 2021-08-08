@@ -1,0 +1,10 @@
+ShowWindow(mmPageUrl,"创建新方案",400,260);
+window.parent.ShowWindow(mmPageUrl,"创建新方案",400,260);
+top.$("#divIframe").dialog("close");
+parent.$("#divIframe").dialog("close");
+2.在新窗口中执行父页面的方法
+if(typeof top.StartTimer!="undefined")
+                {
+                    top.StartTimer();
+                }
+top.可换成parent.，如果是window.open打开的，则可以换成window.opener。
